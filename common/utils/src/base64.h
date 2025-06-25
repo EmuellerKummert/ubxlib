@@ -76,7 +76,7 @@ static const unsigned char unb64[]={
 // (you must pass pointer flen).
 // MODIFICATION Rob Meades 2021/09/07: res made a parameter
 // so that we can pass in external memory.
-char* base64( const void* binaryData, int len, int *flen,
+inline char* base64( const void* binaryData, int len, int *flen,
               char *res)
 {
   const unsigned char* bin = (const unsigned char*) binaryData ;
@@ -127,7 +127,7 @@ char* base64( const void* binaryData, int len, int *flen,
 
 // MODIFICATION Rob Meades 2021/09/07: buffer added as a parameter so that
 // we can pass in external memory.
-unsigned char* unbase64( const char* ascii, int len, int *flen,
+inline unsigned char* unbase64( const char* ascii, int len, int *flen,
                          char *buffer)
 {
   const unsigned char *safeAsciiPtr = (const unsigned char*)ascii ;
